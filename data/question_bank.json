@@ -1,0 +1,162 @@
+{
+  "Units": [
+    {
+      "Unit Number": "1",
+      "Unit Name": "Introduction",
+      "Topics": {
+        "Machine Learning Categories": [
+          "What is supervised learning?",
+          "What are algorithm used in supervised learning?",
+          "Give an example of unsupervised learning.",
+          "What is reinforcement learning used for?",
+          "How does supervised learning differ from unsupervised learning?",
+          "What are labelled and unlabeled data?"
+        ],
+        "Knowledge Discovery in Databases": [
+          "What is Knowledge Discovery in Databases (KDD)?",
+          "What are the steps in KDD?",
+          "Why is KDD important in machine learning?",
+          "How does KDD relate to data mining?"
+        ],
+        "SEMMA": [
+          "What does SEMMA stand for?",
+          "What is the purpose of the SEMMA process?",
+          "How is SEMMA different from KDD?",
+          "What are the steps of SEMMA?"
+        ]
+      }
+    },
+    {
+      "Unit Number": "2",
+      "Unit Name": "Machine Learning Perspective of Data",
+      "Topics": {
+        "Scales of Measurement": [
+          "What are scales of measurement?",
+          "What is an example of nominal scale?",
+          "What is the difference between nominal and ordinal scales?",
+          "How does the interval scale differ from the ratio scale?"
+        ],
+        "Dealing with Missing Data": [
+          "What is imputation?",
+          "How do you handle missing data in datasets?",
+          "What is listwise deletion?",
+          "When would you use mean substitution for missing data?"
+        ],
+        "Handling Categorical Data": [
+          "What is one-hot encoding?",
+          "How do you handle categorical data in machine learning?",
+          "What is label encoding?",
+          "When would you use label encoding?"
+        ],
+        "Normalizing Data": [
+          "What is data normalization?",
+          "Why is normalizing data important?",
+          "How does normalization affect machine learning models?",
+          "What is min-max scaling?"
+        ],
+        "Feature Construction or Generation": [
+          "What is feature construction?",
+          "Why is feature generation important?",
+          "How does feature engineering impact models?",
+          "Give an example of feature construction."
+        ]
+      }
+    },
+    {
+      "Unit Number": "3",
+      "Unit Name": "Introduction to Machine Learning Algorithms",
+      "Topics": {
+        "Decision Trees": [
+          "What is a decision tree?",
+          "How do decision trees work?",
+          "What is a leaf node in a decision tree?",
+          "What is the root node of a decision tree?"
+        ],
+        "Support Vector Machine": [
+          "What is a support vector machine?",
+          "What type of problems is SVM used for?",
+          "What is a hyperplane in SVM?",
+          "How does SVM handle classification tasks?"
+        ],
+        "K-Nearest Neighbors": [
+          "What is KNN?",
+          "How does KNN classify new data points?",
+          "What is the role of 'k' in KNN?",
+          "When is KNN used?"
+        ],
+        "Time-Series Forecasting": [
+          "What is time-series forecasting?",
+          "How is time-series data different from regular data?",
+          "Give an example of time-series forecasting.",
+          "What is ARIMA used for in time-series forecasting?"
+        ],
+        "Principal Component Analysis (PCA)": [
+          "What is PCA?",
+          "Why is PCA used?",
+          "How does PCA reduce dimensionality?",
+          "What is an eigenvalue in PCA?"
+        ]
+      }
+    },
+    {
+      "Unit Number": "4",
+      "Unit Name": "Model Diagnosis and Tuning",
+      "Topics": {
+        "Bias and Variance": [
+          "What is bias in machine learning?",
+          "How does variance affect a model?",
+          "What is the bias-variance tradeoff?",
+          "Why is it important to minimize bias and variance?"
+        ],
+        "K-Fold Cross Validation": [
+          "What is K-fold cross-validation?",
+          "How is K-fold cross-validation used?",
+          "What is the benefit of using K-fold cross-validation?",
+          "How many folds are typically used in K-fold cross-validation?"
+        ],
+        "Bagging": [
+          "What is bagging in machine learning?",
+          "How does bagging improve model performance?",
+          "Give an example of a bagging algorithm.",
+          "What is bootstrap sampling in bagging?"
+        ],
+        "Random Forest": [
+          "What is a random forest?",
+          "How does random forest differ from a decision tree?",
+          "Why is random forest considered an ensemble method?",
+          "How does random forest handle overfitting?"
+        ],
+        "Gradient Boosting": [
+          "What is gradient boosting?",
+          "How does gradient boosting work?",
+          "What is boosting in machine learning?",
+          "What is the difference between bagging and boosting?"
+        ]
+      }
+    },
+    {
+      "Unit Number": "5",
+      "Unit Name": "Artificial Neural Network (ANN)",
+      "Topics": {
+        "Perceptron": [
+          "What is a perceptron?",
+          "How does a perceptron work?",
+          "What is the role of weights in a perceptron?",
+          "How does a perceptron make predictions?"
+        ],
+        "Multilayer Perceptrons": [
+          "What is a multilayer perceptron?",
+          "How is a multilayer perceptron different from a single-layer perceptron?",
+          "What is backpropagation in a multilayer perceptron?",
+          "How are weights updated in a multilayer perceptron?"
+        ],
+        "Restricted Boltzmann Machines (RBMs)": [
+          "What is a Restricted Boltzmann Machine?",
+          "How does an RBM work?",
+          "What are hidden units in RBMs?",
+          "How are RBMs used in neural networks?"
+        ]
+      }
+    }
+  ]
+}
