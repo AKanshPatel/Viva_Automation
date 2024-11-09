@@ -22,7 +22,7 @@ project_root/
 ├── data/                            # Stores data files
 │   └── question_bank.json           # JSON file with pre-set questions and topics
 │
-├── documents/                       # Documentation assets
+├── Documents/                       # Documentation assets
 │   ├── diagrams/                    # Technical diagrams and flowcharts
 │   │   ├── architecture.png         # System architecture diagram
 │   │   ├── workflow.png             # Workflow or sequence diagram
