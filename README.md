@@ -22,7 +22,7 @@ project_root/
 ├── data/                            # Stores data files
 │   └── question_bank.json           # JSON file with pre-set questions and topics
 │
-├── docs/                            # Documentation assets
+├── documents/                       # Documentation assets
 │   ├── diagrams/                    # Technical diagrams and flowcharts
 │   │   ├── architecture.png         # System architecture diagram
 │   │   ├── workflow.png             # Workflow or sequence diagram
@@ -41,5 +41,7 @@ project_root/
 │   └── config.yaml                  # Stores configuration data like API keys
 │
 └── frontend/                        # Frontend components for Streamlit
-    └── layout.py                    # Manages basic layout for Streamlit UI
-
+    ├── home_page.py                 # Title and Instructions
+    ├── topic_selection.py           # Topic selection page
+    ├── question_answer.py           # Question and answer page
+    └── score_page.py                # Final Score page
