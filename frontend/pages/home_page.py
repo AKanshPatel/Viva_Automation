@@ -1,10 +1,14 @@
 # Streamlit UI for the homepage
-# This Includes: title of the project, a section for instructions, a checkbox for agreement, and a submit button to proceed. 
-
+# This includes: title of the project, a section for instructions, a checkbox for agreement, and a submit button to proceed.
 import streamlit as st
 
 class HomePage:
-    def display(self):
+    @staticmethod
+    def show(navigate=None):
+        # Initialize session state if needed
+        if 'current_page' not in st.session_state:
+            st.session_state.current_page = 'HomePage'
+        
         # Title of the project
         st.title("Viva Automation System")
         
@@ -25,19 +29,17 @@ class HomePage:
         agree = st.checkbox("I agree to the terms and conditions")
 
         # Submit button to proceed to the next page if agreed
-        if st.button("Start", key="start_button"):
+        if st.button("Start"):
             if agree:
-                # Setting session state to navigate to the next page
-                st.session_state.current_page = "Topic Selection"  # Replace with the actual page name as per your app structure
+                if navigate:
+                    navigate('TopicSelection')
+                else:
+                    # Directly update session state and re-render
+                    st.session_state.current_page = 'TopicSelection'
+                    st.rerun()
             else:
                 st.warning("Please agree to the terms and conditions before proceeding.")
 
-        st.stop()
-
-# Running the page in Streamlit (for standalone testing)
+# Direct run
 if __name__ == "__main__":
-    if "current_page" not in st.session_state:
-        st.session_state.current_page = "Home"
-
-    page = HomePage()
-    page.display()
+    HomePage.show()
