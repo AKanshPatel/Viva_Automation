@@ -1,1 +1,1 @@
-# Main Controll of the application
+# Main Control of the application
