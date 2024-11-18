@@ -6,7 +6,7 @@ import os
 class GroqApi:
     def __init__(self):
         load_dotenv()
-        self.api_key = os.getenv("API_KEY")
+        self.api_key = os.getenv("GROQ_API_KEY")
         self.client = Groq(api_key=self.api_key)
         self.prompt = None
         # self.gv = GlobalVariable()
