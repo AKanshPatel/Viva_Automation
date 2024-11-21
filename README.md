@@ -12,34 +12,42 @@ This project contains the following folder structure:
 
 ## Folder Structure
 
-```plaintext
-project_root/
-│
-├── app.py                           # Main Streamlit app entry point
-├── requirements.txt                 # Project dependencies
-├── README.md                        # Basic project overview
-│
-├── data/                            # Stores data files
-│   └── question_bank.json           # JSON file with pre-set questions and topics
-│
-├── docs/                            # Documentation assets
-│   ├── diagrams/                    # Technical diagrams and flowcharts
-│   │   ├── architecture.png         # System architecture diagram
-│   │   ├── workflow.png             # Workflow or sequence diagram
-│   │   └── components.png           # Diagram of components and interactions
-│   └── images/                      # Additional images for documentation
-│       ├── ui_example.png           # Example screenshot of Streamlit UI
-│       └── data_flow.png            # Data flow diagram
-│
-├── src/                             # Core backend code
-│   ├── question_generation.py       # Generates prompt and interacts with GROQ API
-│   ├── text_to_speech.py            # Converts text to audio (TTS)
-│   ├── speech_to_text.py            # Converts audio to text (STT)
-│   └── evaluation.py                # Evaluates answers using LLM
-│
-├── config/                          # Configuration for API keys and settings
-│   └── config.yaml                  # Stores configuration data like API keys
-│
-└── frontend/                        # Frontend components for Streamlit
-    └── layout.py                    # Manages basic layout for Streamlit UI
+#TODO: Modify the Folder Structure
 
+```plaintext
+VivaAutomation/
+│
+├── app.py                      # Main entry point for running the app
+├── backend/                    # Contains all backend logic and models
+│   ├── __init__.py
+│   ├── question_generator.py   # Handles question generation using Groq API
+│   ├── answer_evaluator.py     # Processes answers and interacts with Groq API
+│   ├── api_calls.py            # Utility for making Groq and Deepgram API calls
+│   ├── database.py             # Manages interactions with the database (scores, feedback)
+│   └── utils/                  # Utility functions for backend
+│       ├── topic_utils.py      # Fetch topics and pre-defined questions
+│       └── feedback_utils.py   # Functions for processing feedback
+│
+├── frontend/                   # Contains all frontend logic and UI components
+│   ├── navigation.py           # This File will handle the navigation between the pages
+│   └── pages
+│        ├── home_page.py            # UI for the home page
+│        ├── topic_selection.py      # UI for selecting topics
+│        ├── question_answer.py      # UI for question display, audio, and mic recording
+│        └── score.py                # UI for showing the score and feedback
+│
+│
+├── data/                       # Contains data files, such as question bank and scores
+│   ├── question_bank.json      # The file containing the units, topics, and questions
+│   └── scores.db               # Database for storing scores and feedback
+├── documents/                  # Documentation assets
+│   ├── diagrams/               # Technical diagrams and flowcharts
+│   │   ├── architecture.png    # System architecture diagram
+│   │   ├── workflow.png        # Workflow or sequence diagram
+│   │   └── components.png      # Diagram of components and interactions
+│   └── images/                 # Additional images for documentation
+│       ├── ui_example.png      # Example screenshot of Streamlit UI
+│       └── data_flow.png       # Data flow diagram
+│
+├── requirements.txt            # List of dependencies required for the project
+└── README.md                   # Project documentation

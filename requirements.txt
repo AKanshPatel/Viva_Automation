@@ -1,1 +1,8 @@
 streamlit
+pydub
+deepgram-sdk
+groq
+python-dotenv
+SpeechRecognition
+pygame
+pyaudio
