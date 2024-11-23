@@ -12,8 +12,6 @@ This project contains the following folder structure:
 
 ## Folder Structure
 
-#TODO: Modify the Folder Structure
-
 ```plaintext
 VivaAutomation/
 │
