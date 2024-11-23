@@ -16,9 +16,9 @@ def get_recognizer():
     """
     return sr.Recognizer()
 
-def record_audio(file_path, timeout=10, phrase_time_limit=None, retries=3, energy_threshold=2000, 
-                 pause_threshold=1, phrase_threshold=0.1, dynamic_energy_threshold=True, 
-                 calibration_duration=1):
+def record_audio(file_path, timeout=None, phrase_time_limit=30, retries=3, energy_threshold=1700, 
+                 pause_threshold=2, phrase_threshold=0.15, dynamic_energy_threshold=True, 
+                 calibration_duration=2):
     """
     Record audio from the microphone and save it as an MP3 file.
     """

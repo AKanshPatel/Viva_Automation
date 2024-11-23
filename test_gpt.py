@@ -17,7 +17,7 @@ class VivaAutomationApp:
         self.evaluation_feedback = None
         self.total_score = 0
         self.max_questions = 2  # Set the maximum number of questions
-        self.sleep_duration = 8 # Sleep duration after asking a question
+        self.sleep_duration = 1 # Sleep duration after asking a question
 
     def generate_question(self):
         """
@@ -106,10 +106,11 @@ class VivaAutomationApp:
         Runs the Viva Automation process step-by-step.
         """
         while self.question_no <= self.max_questions:
-            print(f"Starting Question {self.question_no}...")
+            print(f"\nStarting Question {self.question_no}...")
 
             # Step 1: Generate and display the question
             self.generate_question()
+            print(f"Question {self.question_no}: {self.current_question}")  # Display the question
             question_audio_path = os.path.join("temp", f"question_{self.question_no}_audio.wav")
             self.synthesize_and_play_question(self.current_question, question_audio_path)
 
@@ -120,6 +121,7 @@ class VivaAutomationApp:
             answer_audio_path = os.path.join("temp", f"answer_{self.question_no}.mp3")
             self.record_answer(answer_audio_path)
             self.current_answer = self.transcribe_answer(answer_audio_path)
+            print(f"Answer {self.question_no}: {self.current_answer}")  # Display the transcribed answer
 
             # Step 3: Evaluate the answer
             evaluation = self.evaluate_answer(self.current_question, self.current_answer)
@@ -128,7 +130,7 @@ class VivaAutomationApp:
 
             self.question_no += 1
 
-        print(f"Viva complete! Total Score: {self.total_score}")
+        print(f"\nViva complete! Total Score: {self.total_score}")
 
 if __name__ == "__main__":
     app = VivaAutomationApp()  # You can set the desired sleep duration here
