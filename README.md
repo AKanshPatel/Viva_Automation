@@ -1,4 +1,3 @@
-
 # Project Overview!
 
 ## WorkFlow
@@ -18,26 +17,28 @@ VivaAutomation/
 ├── app.py                      # Main entry point for running the app
 ├── backend/                    # Contains all backend logic and models
 │   ├── __init__.py
-│   ├── question_generator.py   # Handles question generation using Groq API
-│   ├── answer_evaluator.py     # Processes answers and interacts with Groq API
-│   ├── api_calls.py            # Utility for making Groq and Deepgram API calls
+│   ├── deepgram_stt_tts.py     # Deepgram STT and TTS model
+│   ├── prompt.py               # Prompts(Question Generation and Evaluation) to be passed in groq api
+│   ├── groq_api_llm.py         # Utility for making Groq and Deepgram API calls
 │   ├── database.py             # Manages interactions with the database (scores, feedback)
-│   └── utils/                  # Utility functions for backend
-│       ├── topic_utils.py      # Fetch topics and pre-defined questions
-│       └── feedback_utils.py   # Functions for processing feedback
 │
 ├── frontend/                   # Contains all frontend logic and UI components
 │   ├── navigation.py           # This File will handle the navigation between the pages
 │   └── pages
 │        ├── home_page.py            # UI for the home page
 │        ├── topic_selection.py      # UI for selecting topics
-│        ├── question_answer.py      # UI for question display, audio, and mic recording
+│        ├── question_answer.py      # UI for question display, audio, and mic recording and also the main program
 │        └── score.py                # UI for showing the score and feedback
 │
-│
+├── utils/
+│    ├── audio.py              # To record and play audio
+│    ├── fetch_questions.py    # Generate the selected topics qb
+│    └── global_vareiable.py    # File paths
+│       
 ├── data/                       # Contains data files, such as question bank and scores
 │   ├── question_bank.json      # The file containing the units, topics, and questions
 │   └── scores.db               # Database for storing scores and feedback
+│     
 ├── documents/                  # Documentation assets
 │   ├── diagrams/               # Technical diagrams and flowcharts
 │   │   ├── architecture.png    # System architecture diagram
@@ -48,4 +49,5 @@ VivaAutomation/
 │       └── data_flow.png       # Data flow diagram
 │
 ├── requirements.txt            # List of dependencies required for the project
-└── README.md                   # Project documentation
+├── README.md                   # Project documentation
+└── test_gpt_.py                 # Test alll the models and files

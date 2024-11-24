@@ -2,8 +2,8 @@ import re
 import os
 import time
 from backend.prompt import PromptGenerator
-from backend.groq_api import GroqApi
-from backend.deepgram_new import DeepgramAPI
+from backend.groq_api_llm import GroqApi
+from backend.deepgram_stt_tts import DeepgramAPI
 from utils.audio import record_audio, play_audio
 
 class VivaAutomationApp:
