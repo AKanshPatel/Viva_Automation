@@ -51,7 +51,7 @@ class DeepgramAPI:
             transcript = data['results']['channels'][0]['alternatives'][0]['transcript']
             return transcript
         except Exception as e:
-            logging.error(f"{Fore.RED}Deepgram transcription error: {e}{Fore.RESET}")
+            # logging.error(f"{Fore.RED}Deepgram transcription error: {e}{Fore.RESET}")
             raise Exception("Error in transcribing audio")
 
     def text_to_speech(self, text, output_file_path):
@@ -80,7 +80,7 @@ class DeepgramAPI:
                 {"text": text_temp},
                 options
             )
-            logging.info(f"Speech successfully saved to {output_file_path}")
+            # logging.info(f"Speech successfully saved to {output_file_path}")
         except Exception as e:
-            logging.error(f"{Fore.RED}Deepgram TTS error: {e}{Fore.RESET}")
+            # logging.error(f"{Fore.RED}Deepgram TTS error: {e}{Fore.RESET}")
             raise Exception("Error in text-to-speech conversion")

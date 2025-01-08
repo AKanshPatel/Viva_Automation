@@ -81,8 +81,9 @@ class VivaAutomationApp:
         # Attempt to parse the response if it's not a dictionary
         if isinstance(evaluation, str):
             # Parse the custom structure using regular expressions
-            score_match = re.search(r'score:\s*(\d+)', evaluation)
-            feedback_match = re.search(r'feedback:\s*"(.*?)"', evaluation, re.DOTALL)
+            score_match = re.search(r'score:\s*(\d+)', evaluation, re.IGNORECASE)
+            feedback_match = re.search(r'feedback:\s*"(.*?)"', evaluation, re.DOTALL | re.IGNORECASE)
+
 
             if score_match and feedback_match:
                 score = int(score_match.group(1))

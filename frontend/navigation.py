@@ -1,10 +1,10 @@
 import streamlit as st
-from frontend.pages.home_page import HomePage
-from frontend.pages.topic_selection import TopicSelection
-from frontend.pages.question_answer import QuestionAnswer
-from frontend.pages.score_page import ScorePage
+from pages.home_page import HomePage
+from pages.topic_selection import TopicSelection
+from pages.question_answer import QuestionAnswer
+from pages.score_page import ScorePage
 
-class MainControl:
+class Navigation:
     def __init__(self):
         # Initialize session state to track the current page
         if 'current_page' not in st.session_state:
@@ -29,5 +29,5 @@ class MainControl:
 
 # Running the app
 if __name__ == "__main__":
-    control = MainControl()
+    control = Navigation()
     control.run()
