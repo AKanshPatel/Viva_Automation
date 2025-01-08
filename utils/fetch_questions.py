@@ -1,7 +1,7 @@
 
 import json
 import os
-from global_variables import GlobalVariable
+from utils.global_variables import GlobalVariable
 
 class FilterQuestionBank:
     def __init__(self):

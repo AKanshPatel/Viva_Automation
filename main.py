@@ -5,6 +5,7 @@ from backend.prompt import PromptGenerator
 from backend.groq_api_llm import GroqApi
 from backend.deepgram_stt_tts import DeepgramAPI
 from utils.audio import record_audio, play_audio
+from utils.fetch_questions import FilterQuestionBank  # Import FilterQuestionBank
 
 class VivaAutomationApp:
     def __init__(self):
@@ -12,12 +13,13 @@ class VivaAutomationApp:
         self.prompt_generator = PromptGenerator()
         self.groq_api = GroqApi()
         self.deepgram_api = DeepgramAPI()
+        self.fetch_questions = FilterQuestionBank()
         self.current_question = None
         self.current_answer = None
         self.evaluation_feedback = None
         self.total_score = 0
         self.max_questions = 2  # Set the maximum number of questions
-        self.sleep_duration = 1 # Sleep duration after asking a question
+        self.sleep_duration = 1  # Sleep duration after asking a question
 
     def generate_question(self):
         """
@@ -80,10 +82,8 @@ class VivaAutomationApp:
         
         # Attempt to parse the response if it's not a dictionary
         if isinstance(evaluation, str):
-            # Parse the custom structure using regular expressions
             score_match = re.search(r'score:\s*(\d+)', evaluation, re.IGNORECASE)
             feedback_match = re.search(r'feedback:\s*"(.*?)"', evaluation, re.DOTALL | re.IGNORECASE)
-
 
             if score_match and feedback_match:
                 score = int(score_match.group(1))
@@ -94,11 +94,9 @@ class VivaAutomationApp:
                 print("Error: Unable to parse the evaluation response:", evaluation)
                 return {'score': 0, 'feedback': "Error in evaluation"}
         elif isinstance(evaluation, dict):
-            # If it's already a dictionary
             self.total_score += evaluation.get('score', 0)
             return evaluation
         else:
-            # Handle unexpected response types
             print("Error: Groq API returned an unexpected response:", evaluation)
             return {'score': 0, 'feedback': "Error in evaluation"}
 
@@ -106,12 +104,13 @@ class VivaAutomationApp:
         """
         Runs the Viva Automation process step-by-step.
         """
+        self.fetch_questions.run()
         while self.question_no <= self.max_questions:
             print(f"\nStarting Question {self.question_no}...")
 
             # Step 1: Generate and display the question
             self.generate_question()
-            print(f"Question {self.question_no}: {self.current_question}")  # Display the question
+            print(f"Question {self.question_no}: {self.current_question}")
             question_audio_path = os.path.join("temp", f"question_{self.question_no}_audio.wav")
             self.synthesize_and_play_question(self.current_question, question_audio_path)
 
@@ -122,17 +121,21 @@ class VivaAutomationApp:
             answer_audio_path = os.path.join("temp", f"answer_{self.question_no}.mp3")
             self.record_answer(answer_audio_path)
             self.current_answer = self.transcribe_answer(answer_audio_path)
-            print(f"Answer {self.question_no}: {self.current_answer}")  # Display the transcribed answer
+            print(f"Answer {self.question_no}: {self.current_answer}")
 
             # Step 3: Evaluate the answer
             evaluation = self.evaluate_answer(self.current_question, self.current_answer)
             self.evaluation_feedback = evaluation.get('feedback', "No feedback provided.")
+            question_score = evaluation.get('score', 0)
             print(f"Feedback for Question {self.question_no}: {self.evaluation_feedback}")
+            print(f"Score for Question {self.question_no}: {question_score}")
+            print(f"Total Score So Far: {self.total_score}")
 
             self.question_no += 1
 
         print(f"\nViva complete! Total Score: {self.total_score}")
 
 if __name__ == "__main__":
-    app = VivaAutomationApp()  # You can set the desired sleep duration here
+    # Run the Viva Automation application
+    app = VivaAutomationApp()
     app.run()
