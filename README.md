@@ -6,8 +6,8 @@ The ‘Viva Automation System’ aims to revolutionize oral assessments by autom
 
 ## WorkFlow
 
-![System Flow]()
-![Flow Diagram]()
+![System Flow](Documents\System Flow.png)
+![Flow Diagram](Documents\Flow Chart.png)
 
 ## Folder Structure
 
