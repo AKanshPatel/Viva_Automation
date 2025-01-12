@@ -1,13 +1,13 @@
 # Project Overview!
 
+## Info: 
+The ‘Viva Automation System’ aims to revolutionize oral assessments by automating the question selection, candidate interaction, and evaluation process. Utilizing the Llama 3 8b model for real-time question generation and response evaluation, along with Nova-2 APIs for Speech-to-Text (STT) and Text-to-Speech (TTS), the system provides a seamless, interactive assessment experience. Candidates select topics, answer questions in spoken format, and receive immediate feedback based on their responses. The system adjusts the difficulty of subsequent questions dynamically, ensuring personalized testing aligned with each candidate's knowledge level. The project leverages a user-friendly Streamlit interface, offering a scalable solution for oral assessments. Future enhancements, such as transitioning to a Django-based frontend, adding multilingual support, and integrating with educational platforms, will further improve its accessibility, scalability, and interactivity, making it a versatile tool for educational and professional use. 
+
+
 ## WorkFlow
 
-![Flow Chart](https://github.com/user-attachments/assets/a8c49b87-c87c-49b9-8a4f-8d2e9698291e)
-
-
-# Project Overview
-
-This project contains the following folder structure:
+![System Flow]()
+![Flow Diagram]()
 
 ## Folder Structure
 
@@ -40,14 +40,10 @@ VivaAutomation/
 │   └── scores.db               # Database for storing scores and feedback
 │     
 ├── documents/                  # Documentation assets
-│   ├── diagrams/               # Technical diagrams and flowcharts
-│   │   ├── architecture.png    # System architecture diagram
-│   │   ├── workflow.png        # Workflow or sequence diagram
-│   │   └── components.png      # Diagram of components and interactions
-│   └── images/                 # Additional images for documentation
-│       ├── ui_example.png      # Example screenshot of Streamlit UI
-│       └── data_flow.png       # Data flow diagram
 │
 ├── requirements.txt            # List of dependencies required for the project
 ├── README.md                   # Project documentation
-└── test_gpt_.py                 # Test alll the models and files
+└── main.py                 # Test all the models and files
+```
+
+## Setup 
