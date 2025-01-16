@@ -55,29 +55,35 @@ Follow the steps below to set up and run the project on your local machine:
    Clone the repository to your local machine using the following command:
    ```bash
    git clone https://github.com/AKanshPatel/Viva_Automation/tree/refactor/new_codebase
-
+    ```
 
 2. **Install Required Dependencies**:
     Install the necessary dependencies using `pip`:
     ```bash
     pip install -r requirements.txt
+    ```
 
-3. **Create a `.env` File**
+3. **Create a `.env` File**:
     Create a `.env` file in the root directory and add the following environment variables:
     ```
     GROQ_API_KEY=your_groq_api_key
     DEEPGRAM_API_KEY=your_deepgram_api_key
+    ```
 
-4. **Run the Streamlit Frontend**
+4. **Run the Streamlit Frontend**:
 Start the topic selection page by running:
     ```bash
     streamlit run frontend/pages/topic_selection.py
+    ```
 
-
-**5. Close Streamlit After Selection**
+**5. Close Streamlit After Selection**:
     Once you have selected the desired topics, close the Streamlit application.
 
-**6. Run the Main File**
+**6. Run the Main File**:
 Execute the main program using:
     ```bash
     python -m main
+    ```
+
+## License
+[Licence](LICENSE)
