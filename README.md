@@ -1,6 +1,6 @@
 # Project Overview!
 
-## Info: 
+## Introduction: 
 The ‘Viva Automation System’ aims to revolutionize oral assessments by automating the question selection, candidate interaction, and evaluation process. Utilizing the Llama 3 8b model for real-time question generation and response evaluation, along with Nova-2 APIs for Speech-to-Text (STT) and Text-to-Speech (TTS), the system provides a seamless, interactive assessment experience. Candidates select topics, answer questions in spoken format, and receive immediate feedback based on their responses. The system adjusts the difficulty of subsequent questions dynamically, ensuring personalized testing aligned with each candidate's knowledge level. The project leverages a user-friendly Streamlit interface, offering a scalable solution for oral assessments. Future enhancements, such as transitioning to a Django-based frontend, adding multilingual support, and integrating with educational platforms, will further improve its accessibility, scalability, and interactivity, making it a versatile tool for educational and professional use. 
 
 
